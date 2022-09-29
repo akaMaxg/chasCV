@@ -1,0 +1,15 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100 vw;
+}
+
+header{
+    display: flex;
+    background-color: teal;
+    height: 20vh;
+}
+header>img {
+    flex: 1 1 0;
+}
