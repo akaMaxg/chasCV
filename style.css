@@ -1,35 +1,56 @@
 body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+main {
     display: flex;
-    flex-direction: column;
-    margin: 0;
-    width: 100 vw;
-}
-
-header{
-    display: flex;
-    height: 20vh;
-}
-
-img.portraitpicture {
-    height: 100%;
-}
-
-img.headerbackground {
-    flex: 1 1 0;
-}
-
-
-footer{
-    height: 20vh;
+    flex-direction: row;
+    height: 100vh;
     background-color: grey;
+    justify-content: space-between;
 }
 
-section {
+aside.leftColumn {
+    display: flex;
+    width: 25vw;
+    background-color: #357470;
+    flex-direction: column;
+    
+}
+
+aside .portrait {
+    justify-content: center;
+    display: flex;
+    padding: 8px;
+}
+
+aside img {
+    border-radius: 50%;
+    max-width: 50%;
+}
+
+aside .personalInformation {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-left: 0;
+    border-bottom: 5px solid 357470;
+    margin-right: 32px;
 }
-.leftcolumn,
-.rightcolumn {
-    background-color: blueviolet;
+
+aside .personalInformation ul {
+    list-style-type: none;
+    text-align: right;
+    list-style-position: inside;
+}
+
+aside .personalInformation>:first-child {
+    text-align: left;
+    list-style-position: inside;
+}
+
+aside.rightColumn {
+    display: flex;
+    width: 75vw;
+    background-color: #91BFBC;
 }
