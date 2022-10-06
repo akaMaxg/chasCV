@@ -1,56 +1,121 @@
-body{
+:root {
+    --main-radius:5px;
+    --main-padding:5px;
+}
+
+.container{
+    display:grid;
+    height:100vh;
+    grid-template-columns: 0.5fr 1fr 1fr 1fr;
+    grid-template-rows: 0.2fr 1.5fr 1.5fr 1.2fr 0.8fr;
+    grid-template-areas: 
+    "Sidebar Main Main Main"
+    "Sidebar Content1 Content2 Content3"
+    "Sidebar Footer Footer Footer";
+    grid-gap: 0.2rem;
     font-family: 'Montserrat', sans-serif;
+    color:white;
+    text-align: center;
 }
 
-main {
-    display: flex;
-    flex-direction: row;
-    height: 100vh;
-    background-color: grey;
-    justify-content: space-between;
+nav {
+    background: #a7ffeb;
+    grid-area:Nav;
+    border-radius:var(--main-radius);
+    padding-top: var(--main-padding);
 }
 
-aside.leftColumn {
-    display: flex;
-    width: 25vw;
-    background-color: #357470;
-    flex-direction: column;
-    
+main{
+    background: #357470;
+    grid-area:Main;
+    border-radius:var(--main-radius);
+    padding-top: var(--main-padding);
 }
 
-aside .portrait {
-    justify-content: center;
-    display: flex;
-    padding: 8px;
+.Sidebar {
+    background:#91BFBC;
+    grid-area:Sidebar;
+    border-radius:var(--main-radius);
+    padding-top: var(--main-padding);
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25% 15% 25% 25%;
+    grid-template-areas: 
+    "section section"
+    "aside aside";
 }
 
-aside img {
-    border-radius: 50%;
-    max-width: 50%;
-}
-
-aside .personalInformation {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-left: 0;
-    border-bottom: 5px solid 357470;
-    margin-right: 32px;
-}
-
-aside .personalInformation ul {
+.LPersInfo ul {
+    padding-left: 5px;
+    margin: 0;
     list-style-type: none;
+	text-align: left; 
+}
+
+.RPersInfo ul {
+    padding-right: 5px;
+    margin: 0;
+    list-style-type: none;
+	text-align: right; 
+}
+
+.RPersInfo li {
     text-align: right;
     list-style-position: inside;
 }
 
-aside .personalInformation>:first-child {
-    text-align: left;
-    list-style-position: inside;
+
+
+section {
+    display: flex;
+    grid-area:section;
+    justify-content: center;
 }
 
-aside.rightColumn {
-    display: flex;
-    width: 75vw;
-    background-color: #91BFBC;
+img.LeftImage {
+    border-radius: 20%;
+    max-width: 80%;
+}
+
+
+
+.Content1 {
+    background:#2B3433;
+    grid-area:Content1;
+    border-radius:var(--main-radius);
+    padding-top: var(--main-padding);
+}
+.Content2 {
+    background:#2B3433;
+    grid-area:Content2;
+    border-radius:var(--main-radius);
+    padding-top: var(--main-padding);
+}
+.Content3 {
+    background:#2B3433;
+    grid-area:Content3;
+    border-radius:var(--main-radius);
+    padding-top: var(--main-padding);
+}
+footer {
+    background:#357470;
+    grid-area:Footer;
+    border-radius:var(--main-radius);
+    padding-top: var(--main-padding);
+}
+
+
+@media screen and (max-width:800px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr  1.2fr;
+        grid-template-areas:
+        "Nav"
+        "Sidebar"
+        "Main"
+        "Content1"
+        "Content2"
+        "Content3"
+        "Footer";
+    }
 }
