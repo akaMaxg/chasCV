@@ -1,8 +1,22 @@
 :root {
     --main-radius:5px;
     --main-padding:5px;
-}
+    font-family: 'Montserrat', sans-serif;
+    --color-primary:#357470;
+    --color-secondary: #91BFBC;
+    --color-tertiary: linear-gradient(125.94deg, #357470 12.32%, #91BFBC 84.03%);
+    --color-Quat: #2B3433;
+    --text-color: #2B3433;
 
+}
+p {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+
+    }
+
+/* ---------- Primary Container ---------- */
 .container{
     display:grid;
     height:100vh;
@@ -12,12 +26,13 @@
     "Sidebar Main Main Main"
     "Sidebar Main Main Main"
     "Sidebar Main Main Main"
+    "Sidebar ContentHeader ContentHeader ContentHeader"
     "Sidebar Content1 Content2 Content3"
     "Sidebar Footer Footer Footer";
     grid-gap: 0.2rem;
-    font-family: 'Montserrat', sans-serif;
     color:white;
-    text-align: center;
+/*     text-align: center;
+ */
 }
 
 nav {
@@ -29,7 +44,7 @@ nav {
 
 
 main{
-    background: #357470;
+    background: var(--color-primary);
     grid-area:Main;
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
@@ -38,17 +53,17 @@ main{
 
 /* ---------- Left Column Container ---------- */
 .Sidebar {
-    background:#91BFBC;
+    background: var(--color-tertiary);
     grid-area:Sidebar;
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 0.7fr 1fr 1fr;
+    grid-template-rows: 1fr 0.7fr 1fr;
     grid-template-areas: 
     "section section"
     "aside aside"
-    "Ambition Ambition"
+    "About About"
 }
 
 /*----------Left information elements----------*/
@@ -71,37 +86,46 @@ main{
     list-style-position: inside;
 }
 
-.Ambitions{
-    grid-area:Ambition;
+.About{
+    grid-area:About;
 }
 
 
 /*----------Title + picture----------*/
 section {
     grid-area:section;
-    justify-content: center;
+    justify-content: center; /*Varför centrerar den inte?*/
 }
 
 img.LeftImage {
-    border-radius: 20%;
+    border-radius: 50%;
     max-width: 80%;
+    border: 5px solid var(--color-tertiary);
 }
 
 /*----------Main content----------*/
+
+.ContentHeader {
+    background:var(--color-secondary);
+    grid-area:ContentHeader;
+    border-radius:var(--main-radius);
+    padding-top: var(--main-padding);
+    text-align: center;
+}
 .Content1 {
-    background:#2B3433;
+    background:var(--color-secondary);
     grid-area:Content1;
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
 }
 .Content2 {
-    background:#2B3433;
+    background:var(--color-secondary);
     grid-area:Content2;
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
 }
 .Content3 {
-    background:#2B3433;
+    background:var(--color-secondary);
     grid-area:Content3;
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
@@ -109,13 +133,20 @@ img.LeftImage {
 
 /* ---------- Footer ---------- */
 footer {
-    background:#357470;
+    background:var(--color-Quat);
     grid-area:Footer;
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
+    display: flex;
 }
 
+a {
+    color:white;
+}
 
+footer img {
+    width:45px;
+}
 /*---------Responsivenes-----------*/
 @media screen and (max-width:800px) {
     .container {
