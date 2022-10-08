@@ -27,6 +27,7 @@ nav {
     padding-top: var(--main-padding);
 }
 
+
 main{
     background: #357470;
     grid-area:Main;
@@ -34,19 +35,23 @@ main{
     padding-top: var(--main-padding);
 }
 
+
+/* ---------- Left Column Container ---------- */
 .Sidebar {
     background:#91BFBC;
     grid-area:Sidebar;
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
     display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 25% 15% 25% 25%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.7fr 1fr 1fr;
     grid-template-areas: 
     "section section"
-    "aside aside";
+    "aside aside"
+    "Ambition Ambition"
 }
 
+/*----------Left information elements----------*/
 .LPersInfo ul {
     padding-left: 5px;
     margin: 0;
@@ -66,10 +71,13 @@ main{
     list-style-position: inside;
 }
 
+.Ambitions{
+    grid-area:Ambition;
+}
 
 
+/*----------Title + picture----------*/
 section {
-    display: flex;
     grid-area:section;
     justify-content: center;
 }
@@ -79,8 +87,7 @@ img.LeftImage {
     max-width: 80%;
 }
 
-
-
+/*----------Main content----------*/
 .Content1 {
     background:#2B3433;
     grid-area:Content1;
@@ -99,6 +106,8 @@ img.LeftImage {
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
 }
+
+/* ---------- Footer ---------- */
 footer {
     background:#357470;
     grid-area:Footer;
@@ -107,6 +116,7 @@ footer {
 }
 
 
+/*---------Responsivenes-----------*/
 @media screen and (max-width:800px) {
     .container {
         grid-template-columns: 1fr;
