@@ -21,9 +21,9 @@ p {
     display:grid;
     height:100vh;
     grid-template-columns: 0.5fr 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1.5fr 1.5fr 1.2fr 0.8fr;
-    grid-template-areas: 
-    "Sidebar Main Main Main"
+    grid-template-rows: 0.2fr 1.5fr 1.5fr 1.2fr 1.2fr 0.8fr;
+    grid-template-areas:
+    "Sidebar Header Header Header" 
     "Sidebar Main Main Main"
     "Sidebar Main Main Main"
     "Sidebar ContentHeader ContentHeader ContentHeader"
@@ -42,14 +42,53 @@ nav {
     padding-top: var(--main-padding);
 }
 
+/* ---------Header-------- */
+header {
+    grid-area:Header;
+    background:var(--color-Quat);
+    border-radius:var(--main-radius);
+    padding-top: var(--main-padding);
+}
 
+/* ----- Main content area ---- */
 main{
+    display: flex;
     background: var(--color-primary);
     grid-area:Main;
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
 }
 
+
+/* ------ tab setup ----- */
+.mytabs {
+    max-width: 600px;
+    margin: 0px auto;
+    padding: 25px;
+}
+
+.mytabs input[type="radio"] {
+    display: none;
+}
+
+header label {
+    padding: 10px;
+    font-weight: bold;
+}
+
+.mytabs .tab {
+    padding: 10px;
+    background:var(--color-Quat);
+    display: none;
+}
+
+.mytabs input[type="radio"]:checked + .tab {
+    display: block;
+}
+
+/* .mytabs input[type="radio"]:checked header + label {
+    background: #2B3433; Kan jag få labels grön när den ligger under header?
+}
 
 /* ---------- Left Column Container ---------- */
 .Sidebar {
@@ -129,6 +168,7 @@ img.LeftImage {
     grid-area:Content3;
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
+
 }
 
 /* ---------- Footer ---------- */

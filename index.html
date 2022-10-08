@@ -58,79 +58,107 @@
                 teknik, spel och socialt umgänge.    
             </p>
         </div>
-
-        <!-- ---Main Content--- -->
-        <main class="Main"><h2><u>Akademisk bakgrund</u></h2>
-            <div class="akademisk">
-                Sep19 - Apr20
-                <h5>Utveckling av system för försvar och Säkerhet |Masterprogram| Försvarshögskolan</h5>
-                Examensarbete inom systemutvärdering åt Försvarets Materielverk & Försvarsmakten.
-
-                Aug15 – Juni18
-                <h5>Flygtrafik & Logistik | Kandidatexamen | Linköpings Tekniska Högskola</h5>
-                Teknisk kandidatexamen. Examensarbete inom
-                förbättringsarbete kring lager & inköp.
-                Sept17 – Dec17
-                <h5>Exchange |University of Ontario, Institute of Technology</h5>
-            </div>
-            <h2>Program/Övrigt</h2>
-            <ul>
-                <li>IFS ERP</li>
-                <li>CPS</li>
-                <li>Teamcenter</li>
-                <li>Microsoft Office</li>
-            </ul>
-            <ul>
-                <li>LP-Systems</li>
-                <li>ArcGis</li>
-                <li>Arena simulations</li>
-                <li>Port-it</li> 
-            </ul>
-        </main>
-        <div class="ContentHeader"><h2><u>Arbetslivserfarenhet</u></h2></div>
-        <div class="Content1">
-            Maj21 - Påg
-            <h5>Systemingenjör |Försvarets Materielverk</h5>
-            <p>
-                Driver koncept- och metodutveckling inom
-                logistik, Utredningar inom Logistikledning,
-                Utforma interna processer och rutingranskning.
-            </p>
-        </div>
-        <div class="Content2">Maj21 - Påg
-            <h5>SMC operatör | Kustbevakningen</h5>                     Agerade som nationell kontaktpunkt för
-            <p>
-                sjöfarten med ansvar för att ta emot och
-                granska förhandsanmälningar för gränskontroll
-                och sjöfartsskydd.
-            </p>                    
-                Maj18 - Sept18
-                <h5>Logistikadministratör | Norrköpings Hamn</h5>
-            <p>
-                SPlanerade och hanterade transporter,
-                kundkontakt, översåg transporter & bokningar,
-                förbereda faktureringsunderlag och viss
-                tullhantering.
-            </p>
-        </div>
-        <div class="Content3">
-            Jan19 - Aug19
-            <h5>Change Monitor | SAAB Aeronautics</h5>
-            <p>
-                Ledde produktändringar från beslutstagande
-                & planering till artikelframtagning &
-                implementation.
-            </p> 
         
-            Sep18 - Dec 18
-            <h5>Produktionsansvarig | NCC, Div. Hercules</h5>
-            <p>
-                Säkerställde produktionslogistiska material-och
-                informationsflöden genom analyser och
-                åtgärdsförslag. Ledde- och övervakade
-                produktionen & produktionsplaneringen.
-            </p>                            
-        </div>
+        <header>
+            <label for="career">Arbetslivserfarenhet</label>
+            <label for="academy">Akademi</label>
+            <label for="skills">Färdigheter</label>
+            <label for="courses">Kurser</label>
+            <label for="doggo">Doggo</label>
+        </header>
+        <!-- ---Main Content--- -->
+        <main class="Main">            
+            <!-- ---- Tabs ----- -->
+            <div class="mytabs">
+                <input type="radio" id="career" name="mytabs" checked="checked">
+                <div class="tab"><p>
+                    Maj21 - Påg
+                    Systemingenjör |Försvarets Materielverk
+                    Driver koncept- och metodutveckling inomlogistik, Utredningar inom Logistikledning, Utforma interna processer och rutingranskning.
+                    <br><br>
+
+                    Maj21 - Påg
+                    SMC operatör | Kustbevakningen
+                    Agerade som nationell kontaktpunkt för sjöfarten med ansvar för att ta emot och
+                    granska förhandsanmälningar för gränskontroll
+                    och sjöfartsskydd.
+                    <br><br>
+
+                    Maj18 - Sept18
+                    Logistikadministratör | Norrköpings Hamn
+                    Planerade och hanterade transporter,
+                    kundkontakt, översåg transporter & bokningar,
+                    förbereda faktureringsunderlag och viss
+                    tullhantering.
+                    <br><br>
+
+                    Jan19 - Aug19
+                    Change Monitor | SAAB Aeronautics
+                    Ledde produktändringar från beslutstagande
+                    & planering till artikelframtagning &
+                    implementation.
+                    <br><br>
+
+                    Sep18 - Dec 18
+                    Produktionsansvarig | NCC, Div. Hercules
+                    Säkerställde produktionslogistiska material-och
+                    informationsflöden genom analyser och
+                    åtgärdsförslag. Ledde- och övervakade
+                    produktionen & produktionsplaneringen.
+                    </p> 
+                </div>
+            </div>
+            <div class="mytabs">
+                <input type="radio" id="academy" name="mytabs" checked="checked">
+                <div class="tab">
+                    <p>Sep19 - Apr20
+                        <em>Utveckling av system för försvar och Säkerhet |Masterprogram| Försvarshögskolan</em>
+                        Examensarbete inom systemutvärdering åt Försvarets Materielverk & Försvarsmakten.
+                        <br><br>
+                        Aug15 - Juni18
+                        <em>Flygtrafik & Logistik | Kandidatexamen | Linköpings Tekniska Högskola</em>
+                        Teknisk kandidatexamen. Examensarbete inom
+                        förbättringsarbete kring lager & inköp.
+                        <br><br>
+                        Sept17 - Dec17
+                        <em>Exchange |University of Ontario, Institute of Technology</em></p>
+                </div>
+            </div>
+            <div class="mytabs">
+                <input type="radio" id="skills" name="mytabs" checked="checked">
+                <div class="tab">
+                    <p>Här ska skills</p>
+                </div>
+            </div>
+            <div class="mytabs">
+                <input type="radio" id="courses" name="mytabs" checked="checked">                <div class="tab">
+                    <ul>
+                        <li>IFS ERP</li>
+                        <li>CPS</li>
+                        <li>Teamcenter</li>
+                        <li>Microsoft Office</li>
+                    </ul>
+                    <ul>
+                        <li>LP-Systems</li>
+                        <li>ArcGis</li>
+                        <li>Arena simulations</li>
+                        <li>Port-it</li> 
+                    </ul>
+                </div>
+            </div>
+            <div class="mytabs">
+                <input type="radio" id="doggo" name="mytabs" checked="checked">
+                <div class="tab">
+                    <img src="img/mascot.jpg" width="200" alt="Nico">
+                    <p>Doggo Nico famous for Nico-stuff</p>
+                </div>
+            </div>
+        </main>
+
+        <div class="ContentHeader"></div>
+        <div class="Content1"></div>
+        <div class="Content2"></div>
+        <div class="Content3"></div>
 
     <!-- ---Footer--- -->
         <footer>
@@ -160,8 +188,6 @@
             width="45"
             height="30">
             <p>God</p>
-
-            <!-- Nico -->
-    <img src="img/mascot.jpg" alt="Nico"></footer>
+        </footer>
 </div>
 </html>
