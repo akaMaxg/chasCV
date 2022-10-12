@@ -19,9 +19,8 @@ p {
 /* ---------- Primary Container ---------- */
 .container{
     display:grid;
-    height:100vh;
     grid-template-columns: 0.5fr 1fr 1fr 1fr;
-    grid-template-rows: 0.2fr 1.5fr 1.5fr 1.2fr 1.2fr 0.8fr;
+    grid-template-rows: auto 2fr 2fr 2fr 2fr auto;
     grid-template-areas:
     "Sidebar Header Header Header" 
     "Sidebar Main Main Main"
@@ -35,13 +34,6 @@ p {
  */
 }
 
-nav {
-    background: #a7ffeb;
-    grid-area:Nav;
-    border-radius:var(--main-radius);
-    padding-top: var(--main-padding);
-}
-
 /* ---------Header-------- */
 header {
     grid-area:Header;
@@ -49,6 +41,36 @@ header {
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
 }
+
+/* ----Navigation Menu----- */
+nav {
+    justify-content: right;
+    grid-area:Nav;
+    border-radius:var(--main-radius);
+    padding-top: var(--main-padding);
+    display: flex;
+}
+
+ul.NavMenu {
+    display: flex;
+    flex-direction: row;
+}
+nav li {
+    list-style: none;
+    margin: 5px;
+}
+
+nav li:hover {
+    background: black;
+    opacity: 0.6;
+    transition: 0.5s;
+    text-decoration: underline;
+}
+
+li a {
+    text-decoration: none;
+}
+
 
 /* ----- Main content area ---- */
 main{
@@ -59,36 +81,6 @@ main{
     padding-top: var(--main-padding);
 }
 
-
-/* ------ tab setup ----- */
-.mytabs {
-    max-width: 600px;
-    margin: 0px auto;
-    padding: 25px;
-}
-
-.mytabs input[type="radio"] {
-    display: none;
-}
-
-header label {
-    padding: 10px;
-    font-weight: bold;
-}
-
-.mytabs .tab {
-    padding: 10px;
-    background:var(--color-Quat);
-    display: none;
-}
-
-.mytabs input[type="radio"]:checked + .tab {
-    display: block;
-}
-
-/* .mytabs input[type="radio"]:checked header + label {
-    background: #2B3433; Kan jag få labels grön när den ligger under header?
-}
 
 /* ---------- Left Column Container ---------- */
 .Sidebar {
@@ -182,11 +174,20 @@ footer {
 
 a {
     color:white;
+    text-decoration:none;
 }
 
-footer img {
+
+footer img.FlagIcon {
     width:45px;
+    height: 30px;
 }
+
+footer img.ContactIcon {
+    width:45px;
+    height: 30px;
+}
+
 /*---------Responsivenes-----------*/
 @media screen and (max-width:800px) {
     .container {
