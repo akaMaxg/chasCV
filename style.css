@@ -260,6 +260,23 @@ img.Dog {
 }
 
 
+/* ----portfoliio.html---- */
+
+.PortfolioPage main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    }
+
+.PortfolioPage ul.Portfoliolist {
+    margin: 30;
+    list-style: none;
+}
+
+main img {
+    min-width: 40px;
+}
+
 
 /*---------Responsivenes-----------*/
 @media screen and (max-width: 1174px) {
