@@ -7,31 +7,37 @@
     --color-tertiary: linear-gradient(125.94deg, #357470 12.32%, #91BFBC 84.03%);
     --color-Quat: #2B3433;
     --text-color: #2B3433;
-
+    box-sizing: border-box;
 }
+
 p {
     font-weight: 400;
     font-size: 12px;
     line-height: 15px;
+}
 
-    }
+a {
+    color:white;
+    text-decoration:none;
+}
+
+li a {
+    text-decoration: none;
+}
 
 /* ---------- Primary Container ---------- */
-.container{
+.Container {
     display:grid;
     grid-template-columns: 0.5fr 1fr 1fr 1fr;
-    grid-template-rows: auto 2fr 2fr 2fr 2fr auto;
+    grid-template-rows: auto 2fr 2fr auto auto;
     grid-template-areas:
     "Sidebar Header Header Header" 
     "Sidebar Main Main Main"
     "Sidebar Main Main Main"
-    "Sidebar ContentHeader ContentHeader ContentHeader"
     "Sidebar Content1 Content2 Content3"
     "Sidebar Footer Footer Footer";
     grid-gap: 0.2rem;
     color:white;
-/*     text-align: center;
- */
 }
 
 /* ---------Header-------- */
@@ -40,15 +46,16 @@ header {
     background:var(--color-Quat);
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 /* ----Navigation Menu----- */
 nav {
+    display: flex;
     justify-content: right;
-    grid-area:Nav;
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
-    display: flex;
 }
 
 ul.NavMenu {
@@ -60,6 +67,7 @@ nav li {
     margin: 5px;
 }
 
+/* -----Nav interactivity----- */
 nav li:hover {
     background: black;
     opacity: 0.6;
@@ -67,139 +75,208 @@ nav li:hover {
     text-decoration: underline;
 }
 
-li a {
-    text-decoration: none;
+.DogPage a.mydoglink {
+    background: var(--color-primary);
+    transition: 0.5s;
+    text-decoration: underline;
 }
 
+.CareerPage a.careerlink {
+    background: var(--color-primary);
+    transition: 0.5s;
+    text-decoration: underline;
+}
+
+.EducationPage a.educationlink {
+    background: var(--color-primary);
+    transition: 0.5s;
+    text-decoration: underline;
+}
+
+.index a.homelink {
+    background: var(--color-primary);
+    transition: 0.5s;
+    text-decoration: underline;
+}
+
+.PortfolioPage a.portfoliolink {
+    background: var(--color-primary);
+    transition: 0.5s;
+    text-decoration: underline;
+}
 
 /* ----- Main content area ---- */
 main{
-    display: flex;
-    background: var(--color-primary);
     grid-area:Main;
+    display: flex;
+    justify-content: space-between;
+    background: var(--color-primary);
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
+
 }
 
+Ul.Education,
+Ul.Career,
+Ul.Portfolio{
+    padding: 0;
+    list-style-type: none;
+}
+ul.Education li,
+Ul.Career li,
+Ul.Portfolio li {
+    display: flex;
+}
+
+.Education p,
+.Career p,
+.Portfolio p {
+    margin: 0 auto;
+    padding: 5px;
+}
 
 /* ---------- Left Column Container ---------- */
 .Sidebar {
-    background: var(--color-tertiary);
     grid-area:Sidebar;
+    background: var(--color-tertiary);
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 0.7fr 1fr;
-    grid-template-areas: 
-    "section section"
-    "aside aside"
-    "About About"
 }
-
-/*----------Left information elements----------*/
-.LPersInfo ul {
-    padding-left: 5px;
-    margin: 0;
-    list-style-type: none;
-	text-align: left; 
-}
-
-.RPersInfo ul {
-    padding-right: 5px;
-    margin: 0;
-    list-style-type: none;
-	text-align: right; 
-}
-
-.RPersInfo li {
-    text-align: right;
-    list-style-position: inside;
-}
-
-.About{
-    grid-area:About;
-}
-
 
 /*----------Title + picture----------*/
 section {
-    grid-area:section;
-    justify-content: center; /*Varför centrerar den inte?*/
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 img.LeftImage {
     border-radius: 50%;
     max-width: 80%;
     border: 5px solid var(--color-tertiary);
+    margin: 0 auto;
 }
 
-/*----------Main content----------*/
+/*----------Left information elements----------*/
 
-.ContentHeader {
-    background:var(--color-secondary);
-    grid-area:ContentHeader;
-    border-radius:var(--main-radius);
-    padding-top: var(--main-padding);
-    text-align: center;
+ul.InfoLists {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    list-style-type: none;
 }
+
+ul.InfoLists li {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+
+}
+
+.InfoLists p {
+margin: 0;
+    padding: 5px;
+}
+
+/*----------Subcontent----------*/
+
+.Content1 h4,
+.Content2 h4,
+.Content3 h4 {
+    margin-left: 10px;
+}
+
+.Content1 p,
+.Content2 p,
+.Content3 p {
+    margin: 0 auto;
+}
+
 .Content1 {
-    background:var(--color-secondary);
     grid-area:Content1;
+    background:var(--color-secondary);
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
 }
+
+
 .Content2 {
-    background:var(--color-secondary);
     grid-area:Content2;
+    background:var(--color-secondary);
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
 }
 .Content3 {
-    background:var(--color-secondary);
     grid-area:Content3;
+    background:var(--color-secondary);
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
-
 }
 
 /* ---------- Footer ---------- */
 footer {
-    background:var(--color-Quat);
     grid-area:Footer;
+    background:var(--color-Quat);
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
     display: flex;
 }
 
-a {
-    color:white;
-    text-decoration:none;
+footer ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
 }
 
+ul.Language {
+    display: flex;
+}
+
+ul.Language li {
+    padding-left:40px;
+}
 
 footer img.FlagIcon {
-    width:45px;
+    margin: 0 auto;
+    width:40px;
     height: 30px;
+    border-radius: 60%;
 }
 
 footer img.ContactIcon {
+    margin: 0 auto;
     width:45px;
     height: 30px;
 }
 
+/* ----mydog.html---- */
+
+.DogBox {
+    margin: 0 auto;
+}
+img.Dog {
+    margin: 0 auto;
+    min-width: 200%;
+}
+
+
+
 /*---------Responsivenes-----------*/
-@media screen and (max-width:800px) {
-    .container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr  1.2fr;
+@media screen and (max-width: 1174px) {
+    .Container {
+        grid-template-columns: 100vw;
+        grid-template-rows: auto auto auto 1.2fr 1.2fr  auto;
         grid-template-areas:
-        "Nav"
+        "Header"
         "Sidebar"
         "Main"
         "Content1"
         "Content2"
         "Content3"
         "Footer";
+    }
+
+    header {
+        justify-content: center;
     }
 }
