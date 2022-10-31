@@ -28,6 +28,7 @@ li a {
 /* ---------- Primary Container ---------- */
 .Container {
     display:grid;
+    width: 100vw;
     grid-template-columns: 0.5fr 1fr 1fr 1fr;
     grid-template-rows: auto 2fr 2fr auto auto;
     grid-template-areas:
@@ -295,5 +296,15 @@ main img {
 
     header {
         justify-content: center;
+    }
+
+    footer {
+        display: flex;
+        justify-content: space-between;
+    }
+    footer ul {
+        width: 100 vw;
+        display: flex;
+        flex-wrap: wrap;
     }
 }
