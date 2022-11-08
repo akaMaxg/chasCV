@@ -42,7 +42,7 @@
         "title": "ChasCV",
         "language": "HTML + CSS",
         "description": "CV created for Fullstack.NET program",
-        "link": "https://github.com/akaMaxg/chasCV"
+        "link": "https://github.com/akaMaxg/chasCV-restored"
       },
       {
         "title": "js--number.guessing-game-main",
@@ -54,7 +54,7 @@
         "title": "chasCV_dynamic",
         "language": "HTML + CSS + JS & JSON",
         "description": "Same CV with extended functionality and data in JSON",
-        "link": "https://github.com/akaMaxg/js--number-guessing-game-main"
+        "link": "https://github.com/akaMaxg/chasCV_dynamic"
       }
     ]
   }
