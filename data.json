@@ -1,0 +1,60 @@
+{
+    "employment": [
+      {
+        "time": "03/22 - Pågående",
+        "jobTitle": "Systemutvecklare, Konsult",
+        "company": "CAG Consoden | FMV",
+        "text": "Inom FMV projekt FMN (Federated Mission Networking) bedrivs ett arbete att utveckla och anpassa Försvarsmaktens ledningsstödsystem till olika internationella standarder som regleras av FMN ramverk. Mitt arbete bestod av att ansvara för verksamhetsmodellering samt övergripande kravarbete."
+      },
+      {
+        "time": "05/21 - 03/22",
+        "jobTitle": "Systemingenjör",
+        "company": "Försvarets Materielverk",
+        "text": "Inom verksamhetsområde Logistik på FMV hade jag övergripande ansvar för utredningar, koncept- och metodutveckling. Fokus låg i att skapa förståelse för FMV:s verksamhet kring interna- & externa processer, krav och styrningar samt upprätta förbättringsförslag."
+      },
+      {
+        "time": "01/19 - 08/19",
+        "jobTitle": "Konfigurationshanterare",
+        "company": "SAAB Aeronautics",
+        "text": "SAAB utvecklar nästa generations stridsflygplan, Gripen E. Under den produkten var jag en interdisciplinär koordinerare. Mitt primära ansvar låg i att leda produktändringar från beslutstagande & planering till artikelframtagning, beställning & implementation."
+      },
+      {
+        "time": "09/18 - 12/18",
+        "jobTitle": "Produktionsansvarig ",
+        "company": "NCC, Division Hercules",
+        "text": "Division Hercules producerar armeringsjärn åt NCC:s olika projekt. Som produktionsansvarig var mitt ansvar att säkerställa kvalitativ operativ verksamhet. Jag översåg den dagliga verksamheten, personalen, produktionslogistiska material-och informationsflöden genom analyser och åtgärdsförslag."
+      }
+    ],
+    "education": [
+      {
+        "time": "09/19 - 04/21",
+        "institute": "Swedish Defence University",
+        "program": "Masters, System science development for Defence and Security"
+      },
+      {
+        "time": "08/15 - 06/18",
+        "institute": "Linköping University",
+        "program": "Bachelors, Logistics and airtransportatoin"
+      }
+    ],
+    "portfolio": [
+      {
+        "title": "ChasCV",
+        "language": "HTML + CSS",
+        "description": "CV created for Fullstack.NET program",
+        "link": "https://github.com/akaMaxg/chasCV"
+      },
+      {
+        "title": "js--number.guessing-game-main",
+        "language": "HTML + CSS + JS",
+        "description": "A number guessing game",
+        "link": "https://github.com/akaMaxg/js--number-guessing-game-main"
+      },
+      {
+        "title": "chasCV_dynamic",
+        "language": "HTML + CSS + JS & JSON",
+        "description": "Same CV with extended functionality and data in JSON",
+        "link": "https://github.com/akaMaxg/js--number-guessing-game-main"
+      }
+    ]
+  }
