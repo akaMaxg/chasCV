@@ -250,17 +250,6 @@ footer img.ContactIcon {
     height: 30px;
 }
 
-/* ----mydog.html---- */
-
-.DogBox {
-    margin: 0 auto;
-}
-img.Dog {
-    margin: 0 auto;
-    min-width: 200%;
-}
-
-
 /* ----portfoliio.html---- */
 
 .PortfolioPage main {
