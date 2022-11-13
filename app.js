@@ -133,7 +133,6 @@ educationLink.addEventListener('click', function() {
                 <p><em<b>${element.program}</b></em></p>
                 </li>`
             postEduItem += newItem
-            console.log(postEduItem)
         })
     }
     fillCvEdu(cvElements)
@@ -160,7 +159,6 @@ portfolioLink.addEventListener('click', function() {
                     <a class = "clicked" href="${element.link}"><u>Click here to see ${element.title} repo!</u></a>
                 </li><br>`
             postPortItem += newItem
-            console.log(postPortItem)
             })
         }
     fillCvPort(cvElements)

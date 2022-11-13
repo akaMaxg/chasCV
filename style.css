@@ -446,7 +446,7 @@ footer img.ContactIcon
         display: flex;
         flex-wrap: wrap;
     }
-    header button.learnMore
+    header button.dogButton
     {
     display: none;
     }
