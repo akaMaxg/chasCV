@@ -1,4 +1,5 @@
-:root {
+:root 
+{
     --main-radius:5px;
     --main-padding:5px;
     font-family: 'Montserrat', sans-serif;
@@ -10,190 +11,332 @@
     box-sizing: border-box;
 }
 
-p {
+body 
+{
+    margin: 5px;
+}
+
+p 
+{
     font-weight: 400;
-    font-size: 12px;
+    font-size: 15px;
     line-height: 15px;
 }
 
-a {
+a 
+{
     color:white;
     text-decoration:none;
 }
 
-li a {
+li a 
+{
     text-decoration: none;
 }
 
-/* ---------- Primary Container ---------- */
-.Container {
+/*-- Primary Container--*/
+.container 
+{
     display:grid;
     width: 100vw;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr;
-    grid-template-rows: auto 2fr 2fr auto auto;
+    height: 100vh;
+    max-width: 100%;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 10% 60% 20%  10%;
     grid-template-areas:
     "Sidebar Header Header Header" 
     "Sidebar Main Main Main"
-    "Sidebar Main Main Main"
     "Sidebar Content1 Content2 Content3"
     "Sidebar Footer Footer Footer";
-    grid-gap: 0.2rem;
+    grid-gap: 3px;
     color:white;
 }
 
-/* ---------Header-------- */
-header {
+/*--classes for scripts--*/
+
+.reducedOpac
+{
+    filter: brightness(50%);
+}
+.hide
+{
+    display: none;
+}
+.unclickable 
+{
+    pointer-events: none;
+}
+
+/*--Header--*/
+header 
+{
     grid-area:Header;
     background:var(--color-Quat);
     border-radius:var(--main-radius);
-    padding-top: var(--main-padding);
     display: flex;
     flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* ----Navigation Menu----- */
-nav {
+/*--Learn more Button--*/
+header button.dogButton
+{
+    background:var(--color-Quat);    
+    border: solid 3px white;
+    border-radius: 20px;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/*--Modal--*/
+.modalPop 
+{
+    position: absolute;
+    left: 40%;
+    top: 25%;
+    z-index: 1;
+    background: white;
+    width: 30%;
+    height: 40%;
+    border-radius: 30px;
+}
+
+.carousel-slide
+{
+    display: none;
     display: flex;
-    justify-content: right;
-    border-radius:var(--main-radius);
-    padding-top: var(--main-padding);
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    justify-content: center;
 }
 
-ul.NavMenu {
+img.doggo
+{
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 250px;
+}
+
+.previousBtn 
+{
+    position:absolute;
+    top: 50%;
+    z-index: 10;
+    left: 3%;
+    background:var(--color-Quat);    
+    border: solid 3px white;
+    border-radius: 20px;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nextBtn 
+{
+    position:absolute;
+    top: 50%;
+    z-index: 10;
+    right: 3%;
+    background:var(--color-Quat);    
+    border: solid 3px white;
+    border-radius: 20px;
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+.modal-close 
+{
+    position:absolute;
+    top: 2%;
+    z-index: 10;
+    right: 2%;
+    background:var(--color-Quat);    
+    border: solid 3px white;
+    border-radius: 20px;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/*--Navigation Menu--*/
+
+ul.NavMenu 
+{
     display: flex;
     flex-direction: row;
+    width: 400px;
+    height: 80px;
+    position: relative; 
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
 }
-nav li {
+
+nav ul li 
+{
     list-style: none;
     margin: 5px;
+    position: relative;
+    width: 70px;
+    height: 70px;
+    padding: 5px;
 }
 
-/* -----Nav interactivity----- */
-nav li:hover {
-    background: black;
-    opacity: 0.6;
+nav ul li span 
+{
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li span.icon 
+{
+    position: relative;
+    display: block;
+    line-height: 75px;
+    font-size: 1.5em;
+    text-align: center;
     transition: 0.5s;
-    text-decoration: underline;
+    color: white;
 }
 
-.DogPage a.mydoglink {
-    background: var(--color-primary);
-    transition: 0.5s;
-    text-decoration: underline;
+/*--Nav interactivity--*/
+.NavMenu li:hover span.icon
+{
+transform: translateY(-25px);
 }
 
-.CareerPage a.careerlink {
-    background: var(--color-primary);
-    transition: 0.5s;
+.NavMenu li:hover span.text 
+{
     text-decoration: underline;
+    transition: 1s;
+    cursor: pointer;
 }
 
-.EducationPage a.educationlink {
-    background: var(--color-primary);
-    transition: 0.5s;
-    text-decoration: underline;
+.active
+{
+    color: purple;
+    background-color: red;
 }
 
-.index a.homelink {
-    background: var(--color-primary);
-    transition: 0.5s;
-    text-decoration: underline;
-}
-
-.PortfolioPage a.portfoliolink {
-    background: var(--color-primary);
-    transition: 0.5s;
-    text-decoration: underline;
-}
-
-/* ----- Main content area ---- */
-main{
+/*--Main content area--*/
+main
+{
     grid-area:Main;
     display: flex;
     justify-content: space-between;
     background: var(--color-primary);
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
-
 }
 
 Ul.Education,
 Ul.Career,
-Ul.Portfolio{
+Ul.Portfolio
+{
     padding: 0;
     list-style-type: none;
 }
+
 ul.Education li,
 Ul.Career li,
-Ul.Portfolio li {
+Ul.Portfolio li 
+{
     display: flex;
 }
 
 .Education p,
 .Career p,
-.Portfolio p {
+.Portfolio p 
+{
     margin: 0 auto;
     padding: 5px;
 }
 
-/* ---------- Left Column Container ---------- */
-.Sidebar {
+/*--Left Column Container--*/
+.Sidebar 
+{
     grid-area:Sidebar;
     background: var(--color-tertiary);
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
 }
+.Sidebar p 
+{
+    margin-left: 5px;
+}
 
-/*----------Title + picture----------*/
-section {
+/*--Title + picture--*/
+section 
+{
     display: flex;
     flex-direction: column;
     text-align: center;
 }
 
-img.LeftImage {
+img.LeftImage 
+{
     border-radius: 50%;
     max-width: 80%;
     border: 5px solid var(--color-tertiary);
     margin: 0 auto;
 }
 
-/*----------Left information elements----------*/
+/*--Left information elements--*/
 
-ul.InfoLists {
+ul.InfoLists 
+{
     display: flex;
     flex-direction: column;
     padding: 0;
     list-style-type: none;
 }
 
-ul.InfoLists li {
+ul.InfoLists li 
+{
     display: flex;
     list-style-type: none;
     justify-content: space-between;
 
 }
 
-.InfoLists p {
-margin: 0;
+.InfoLists p 
+{
+    margin: 0;
     padding: 5px;
 }
 
-/*----------Subcontent----------*/
+/*--Subcontent--*/
 
 .Content1 h4,
 .Content2 h4,
-.Content3 h4 {
+.Content3 h4 
+{
     margin-left: 10px;
 }
 
 .Content1 p,
 .Content2 p,
-.Content3 p {
+.Content3 p 
+{
     margin: 0 auto;
 }
 
-.Content1 {
+.Content1 
+{
     grid-area:Content1;
     background:var(--color-secondary);
     border-radius:var(--main-radius);
@@ -201,76 +344,78 @@ margin: 0;
 }
 
 
-.Content2 {
+.Content2 
+{
     grid-area:Content2;
     background:var(--color-secondary);
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
 }
-.Content3 {
+.Content3 
+{
     grid-area:Content3;
     background:var(--color-secondary);
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
 }
 
-/* ---------- Footer ---------- */
-footer {
+/*-- Footer--*/
+footer 
+{
     grid-area:Footer;
     background:var(--color-Quat);
     border-radius:var(--main-radius);
     padding-top: var(--main-padding);
     display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 }
 
-footer ul {
+footer ul 
+{
     display: flex;
     flex-direction: row;
     list-style: none;
 }
 
-ul.Language {
+ul.Language 
+{
     display: flex;
 }
 
-ul.Language li {
+ul.Language li 
+{
     padding-left:40px;
 }
 
-footer img.FlagIcon {
+footer a 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+}
+
+footer img.FlagIcon 
+{
     margin: 0 auto;
     width:40px;
     height: 30px;
     border-radius: 60%;
 }
 
-footer img.ContactIcon {
+footer img.ContactIcon 
+{
     margin: 0 auto;
     width:45px;
     height: 30px;
 }
 
-/* ----portfoliio.html---- */
-
-.PortfolioPage main {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    }
-
-.PortfolioPage ul.Portfoliolist {
-    margin: 30;
-    list-style: none;
-}
-
-main img {
-    min-width: 40px;
-}
-
-
 /*---------Responsivenes-----------*/
-@media screen and (max-width: 1174px) {
-    .Container {
+@media screen and (max-width: 1174px) 
+{
+    .container 
+    {
         grid-template-columns: 100vw;
         grid-template-rows: auto auto auto 1.2fr 1.2fr  auto;
         grid-template-areas:
@@ -283,17 +428,26 @@ main img {
         "Footer";
     }
 
-    header {
+    header 
+    {
         justify-content: center;
+        padding-bottom: 4px;
+
     }
 
-    footer {
+    footer 
+    {
         display: flex;
         justify-content: space-between;
     }
-    footer ul {
+    footer ul 
+    {
         width: 100 vw;
         display: flex;
         flex-wrap: wrap;
+    }
+    header button.learnMore
+    {
+    display: none;
     }
 }

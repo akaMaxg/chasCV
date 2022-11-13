@@ -1,108 +1,220 @@
-//Funktion för att hämta data från data.json
+
+//Function to retrieve data from data.json
 const getInformation = async () => {
     const request = new Request('data.json');
-
     const response = await fetch(request);
-
+    //Returns content in json format. (Is this necessary if its already in json?)
     const cvElements = await response.json();
-
-//returnerar innehåll i .json format (behövs denna när filen redan är JSON formatterad?)
 return cvElements;
 }
 
-//initierar JSON
+//initiate dataJson
 const cvElements = await getInformation()
-console.log(cvElements)
-//lagrar delar av JSON i separata variabler
-const employments = cvElements.employment
-console.log(employments)
-const educations = cvElements.education
-console.log(educations)
-const portfolio = cvElements.portfolio
-console.log(portfolio)
 
-//DOM-länkar och initialiserar variabler för listhantering
+//Store different objects in json
+const employments = cvElements.employment
+const educations = cvElements.education
+const portfolio = cvElements.portfolio
+
+//DOM-targets och initialiserar variabler för listhantering
 let homelink = document.querySelector('.homelink')
 let careerLink = document.querySelector('.careerlink')
 let educationLink = document.querySelector('.educationlink')
 let portfolioLink = document.querySelector('.portfoliolink')
+let container = document.querySelector('.container')
+
+//Modal
+let dogBtn = document.querySelector('.dogButton')
+let modal = document.querySelector('.modalPop')
+let carouselSlide = document.querySelector('.carousel-slide');
+const carouselImg = document.querySelectorAll('.carousel-slide img');
+
+//buttons
+const prevBtn = document.querySelector('.previousBtn')
+const nextBtn = document.querySelector('.nextBtn')
+const modalClose = document.querySelector('.modal-close')
+
+//arrayCounter
+let carouselImageIndex = 0;
+
+//Variables for posting data from Json
 let postJobItem = ``;
 let postEduItem = ``;
 let postPortItem = ``;
 
-//Careerlänk
-//Hämtar information från career, som hämtar från json.
-//formatterar och sen i slutet på clickfunktion lägger formaterad lista
-careerLink.addEventListener('click', function() { 
-    
-    const fillCv = (cvElements) => {
-        employments.forEach(element => {
-            const newItem = `
-            <li>
-                    <p><em><b>${element.time}</b></em></p> <br>
-                    ${element.jobTitle}
-                    <p><em><b>${element.company}</b></em></p> <br>
-                    ${element.jobTitle}
-                    <p>${element.text}</p><br>
-            </li>`
-            postJobItem += newItem
-            console.log(postJobItem)
-        })
-
-    }
-    console.log(postJobItem)
-    fillCv(cvElements)
-    document.querySelector('.testing123').innerHTML = postJobItem
+//At load, hide certain elements
+modal.classList.add('hide')
+carouselImg.forEach((element, index) => {
+    carouselImg[index].classList.add('hide');
 })
 
-//Ska göras om, skriver just nu över hela main och förstör UL för resterande click
-homelink.addEventListener('click',()=> document.querySelector('.Main').innerHTML = `<main class="Main">
-<p><b><Em>Välkommen till mitt CV. Använd navigationsmenyn för att navigera sidan.</Em><br></b><br> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit voluptatibus beatae ad accusantium non. Quod sit dolorum beatae sint quaerat excepturi vel culpa voluptates doloremque, est porro similique autem neque in optio ab perspiciatis accusamus aliquam, mollitia iusto natus reiciendis minima magni enim? Natus dolorem facilis voluptas labore animi. Harum libero vel saepe neque dolores quae ab molestiae odio, enim voluptates quisquam nisi at, atque nemo quam corporis minus aliquam dolorum veniam delectus voluptatibus autem cum fugiat! Earum nam architecto ex facilis nesciunt nihil, fugit aperiam, consequatur commodi, distinctio saepe tempore? Quos inventore, dolore sint neque earum laborum nisi alias!</p>
+//Ensure first picture shows at modal open
+carouselImg[0].classList.remove('hide');
+
+//button listeners for picture slides
+nextBtn.addEventListener('click',() => {
+        nextImg()
+    })
+
+prevBtn.addEventListener('click',() => {
+        prevImg()
+    })
+
+//Button to fade out the main page when dog-button is pressed
+dogBtn.addEventListener('click', function() {
+    fadeMain()
+    //Shows the modal
+    toggleModal()
+})
+
+//Button that closes the modal also fades in/out main page
+modalClose.addEventListener('click',function(){
+    fadeMain()
+    toggleModal()
+})
+
+
+
+//Frontpage
+//Fills startpage with some breadtext
+document.querySelector('.mainContent').innerHTML = `<p><b><Em>Välkommen till mitt CV. Använd navigationsmenyn för att navigera sidan.</Em><br></b><br> Lorem ipsum si alias!</p>`
+
+//Click-function to enter same information if "home" is clicked
+homelink.addEventListener('click',()=> {
+    document.querySelector('.mainContent').innerHTML = `<p><b><Em>Välkommen till mitt CV. Använd navigationsmenyn för att navigera sidan.</Em><br></b><br> Lorem ipsum si alias!</p>
 `
-)
+//Empties the other variables that post information to avoid duplicates
+postJobItem = ``;
+postEduItem = ``;
+postPortItem = ``;
+})
 
-//Utbildningslänk 
-//Hämtar information från educations, som hämtar från json.
-//formatterar och sen i slutet på clickfunktion lägger formaterad lista
+
+//When career link is pressed
+//Get information from career in JSON
+//Formats and posts employments in main page.
+careerLink.addEventListener('click', function() {
+
+//Checks so that job page is not filled
+    if (postJobItem.length == 0) {
+        const fillCv = (cvElements) => {
+            employments.forEach(element => {
+                const newItem = `
+                    <li>
+                        <p><b>${element.jobTitle}</b></p>
+                        <em><b>${element.company}</b></em>
+                        <p><em>${element.time}</em></p>
+                        <p>${element.text}</p>
+                    </li><br>`
+                postJobItem += newItem
+            })
+        }
+//fills page
+    fillCv(cvElements)
+    document.querySelector('.mainContent').innerHTML = postJobItem
+}
+//Clears other variables to avoid duplicates
+postEduItem = ``;
+postPortItem = ``;
+})
+
+//When Education link is pressed
+//Get information from education in JSON
+//Formats and posts education in main page.
 educationLink.addEventListener('click', function() { 
-
+    //Checks so that job page is not filled
+    if (postEduItem.length == 0) {
     const fillCvEdu = (cvElements) => {
         educations.forEach(element => {
             const newItem = `
                 <li>
-                    <p><em><b>${element.time}</b></em></p> <br>
-                    ${element.institute}
-                    <p><em><b>${element.program}</b></em></p> <br>
+                <p><em><b>${element.institute}</b></em></p>
+                <p><em>${element.time}</em></p>
+                <p><em<b>${element.program}</b></em></p>
                 </li>`
-        postEduItem += newItem
-        console.log(postEduItem)
-    })
+            postEduItem += newItem
+            console.log(postEduItem)
+        })
+    }
+    fillCvEdu(cvElements)
+    document.querySelector('.mainContent').innerHTML = postEduItem
 }
-
-fillCvEdu(cvElements)
-document.querySelector('.testing123').innerHTML = postEduItem
+//Clears other variables to avoid duplicates
+    postJobItem = ``;
+    postPortItem = ``;
 })
 
-
-//Portfoliolänk
-//Hämtar information från portfolio, som hämtar från json.
-//formatterar och sen i slutet på clickfunktion lägger formaterad lista
+//When Portfoli link is pressed
+//Get information from Portfolio in JSON
+//Formats and posts Portfolio in main page.
 portfolioLink.addEventListener('click', function() { 
-
+        //Checks so that job page is not filled
+    if (postPortItem.length == 0) {
     const fillCvPort = (cvElements) => {
         portfolio.forEach(element => {
             const newItem = `
                 <li>
-                    <p><em><b>${element.title}</b></em></p> <br>
-                    ${element.language}
-                    <p><em><b>${element.description}</b></em></p> <br>
-                    ${element.link}
-                </li>`
-        postPortItem += newItem
-        console.log(postPortItem)
-    })
+                    <p><em><b>${element.title}</b></em></p>
+                    Using: ${element.language}
+                    <p><em>${element.description}</em></p>
+                    <a class = "clicked" href="${element.link}"><u>Click here to see ${element.title} repo!</u></a>
+                </li><br>`
+            postPortItem += newItem
+            console.log(postPortItem)
+            })
+        }
+    fillCvPort(cvElements)
+    document.querySelector('.mainContent').innerHTML = postPortItem
+}
+//Clears other variables to avoid duplicates
+    postJobItem = ``;
+    postEduItem = ``;
+})
+
+//function that toggles the modal
+function toggleModal(){
+    modal.classList.toggle('hide')
 }
 
-fillCvPort(cvElements)
-document.querySelector('.testing123').innerHTML = postPortItem
-})
+//Function that makes fades out main page
+function fadeMain(){
+    container.classList.toggle('reducedOpac')    
+    container.classList.toggle('unclickable')
+}
+
+//Image slide manage functions
+function nextImg() {
+    if (carouselImageIndex==1) {
+        carouselImg[1].classList.add('hide')
+        carouselImg[2].classList.remove('hide')
+    }
+    if (carouselImageIndex==0) {
+        carouselImg[0].classList.add('hide')
+        carouselImg[1].classList.remove('hide')
+        carouselImageIndex++
+        }
+}
+
+function prevImg() {
+    if (carouselImageIndex==0) {
+        carouselImg[0].classList.remove('hide');
+        carouselImg[1].classList.add('hide');
+    }
+    if (carouselImageIndex==1) {
+        carouselImg[1].classList.remove('hide');
+        carouselImg[2].classList.add('hide')
+        carouselImageIndex--
+    }
+    if (carouselImageIndex==2) {
+        carouselImg[0].classList.add('hide');
+        carouselImg[1].classList.remove('hide');
+        carouselImg[2].classList.add('hide');
+        carouselImageIndex--
+    }
+    if (carouselImageIndex <=0) return;
+    if(carouselImageIndex == 1){
+        carouselImg[1].classList.remove('hide')
+        carouselImg[0].classList.add('hide')
+        carouselImageIndex++
+    }
+}

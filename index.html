@@ -12,8 +12,21 @@
     </head>
 
 <body class="index">
-    <div class="Container">
-        <!-- ---Left Column--- -->
+    <div class="modal">
+        <div class="modalPop">
+            <div class="modal-close">X</div>
+            <div class="carousel-slide">
+                <img src="/img/mascot/doggo2.jpg" alt="Sleepy Dog" class="doggo">
+                <img src="/img/mascot/doggo4.jpg" alt="Praise the sun Dog" class="doggo">
+                <img src="/img/mascot/doggo5.jpg" alt="Snowy pup" class="doggo">
+            </div>
+            <button class="previousBtn">Previous</button>
+            <button class="nextBtn">Next</button>
+        </div>
+    </div>
+    
+    <div class="container">
+<!--Left Column-->
         <div class="Sidebar">
             <section>
                 <div>
@@ -22,24 +35,22 @@
                 </div>
                 <img class="LeftImage" src="img/headerportrait.jpg" style="border:5px solid #91BFBC;" alt="text">
             </section>
-
-        <!-- ---Personal information--- -->
-        <div class="PersonalInfo">
-            <ul class="InfoLists">
-                <li>
-                    <p><em><b>Address</b></em></p>
-                    <p>Upplands Väsby</p>
-                </li>
-                <li>
-                    <p><em><b>Stad</b></em></p>
-                    <p>Stockholm</p>
-                </li>
-                <li>
-                    <p><em><b>Ålder</b></em></p>
-                    <p>32</p>
-                </li>
-            </ul>
-        </div>
+            <div class="PersonalInfo">
+                <ul class="InfoLists">
+                    <li>
+                        <p><em><b>Address</b></em></p>
+                        <p>Upplands Väsby</p>
+                    </li>
+                    <li>
+                        <p><em><b>Stad</b></em></p>
+                        <p>Stockholm</p>
+                    </li>
+                    <li>
+                        <p><em><b>Ålder</b></em></p>
+                        <p>32</p>
+                    </li>
+                </ul>
+            </div>
             <p>
                 <strong>Om Mig</strong><br>Jag är ambitiös och ansvarsfull vad det gäller
                 uppgifter och utmaningar framför mig. Som person är
@@ -56,61 +67,78 @@
                 teknik, spel och socialt umgänge.    
             </p>
         </div>
-        
-        <header>
-            <!-- ----NAV---- -->
-            <nav>   
-                <ul class="NavMenu">
-                    <li><!-- <a href="index.html" class="homelink">Startsida</a> --><p class="homelink">Startsida</p></li>
-                    <li><!-- <a href="career.html" class="careerlink">Arbetslivserfarenhet</a> --><p class="careerlink">Arbetslivserfarenhet</p></li>
-                    <li><!-- <a href="education.html" class="educationlink">Akademi</a> --><p class="educationlink">Akademi</p></li>
-                    <li><!-- <a href="portfolio.html" class="portfoliolink">My Portfolio</a> --><p class="portfoliolink">My Portfolio</p></li>
-                </ul>
-            </nav>
-        </header>
 
-        <!-- ---Main Content--- -->
-        <main class="Main">
-            <ul class="testing123"></ul>
-        </main>
-        <div class="Content1">
-            <h4>Skills</h4>
-            <ul class="skills">
-                <li><p>Systemvetenskap</p></li>
-                <li><p>Verksamhetsledning</p></li>
-                <li><p>Affärsstrategi</p></li>
-                <li><p>Operativ verksamhet</p></li>
-                <li><p>Analyserande</p></li>
+    <header>
+        <button class="dogButton">Some pictures of my trusted companion.</button>            
+<!--NAV-->
+        <nav>   
+            <ul class="NavMenu">
+                <li class="list">
+                    <span class="icon">
+                    <ion-icon name="home-outline"></ion-icon></span>
+                    <span class="homelink text">Home</span>
+                </li>
+                <li class="list">
+                    <span class="icon"> <ion-icon name="laptop-outline"></ion-icon></span>
+                    <span class="careerlink text">Career</span>
+                </li>
+                <li class="list">
+                    <span class="icon"><ion-icon name="school-outline"></ion-icon></span>
+                    <span class="educationlink text">Education</span>
+                </li>
+                <li class="list">
+                    <span class="icon"><ion-icon name="logo-github"></ion-icon></span>
+                    <span class="portfoliolink text">Portfolio</span>
+                </li>
             </ul>
-        </div>
-        <div class="Content2">
-                <h4>Systems</h4>
-                <ul class="systems">
-                    <li><p>Enterprise Architect (EA)</p></li>
-                    <li><p>SAP</p></li>
-                    <li><p>IFS ERP</p></li>
-                    <li><p>Microsoft Office</p></li>
-                    <li><p>Arc Gis</p></li>
-                </ul>
-        </div>
-        <div class="Content3">
-            <h4>Courses</h4>
-            <ul class="Courses">
-                <li><p>Integrerad Logistik Stöd (ILS)</p></li>
-                <li><p>Human factor Integration (HFI)</p></li>
-                <li><p>Offentlig Upphandling</p></li>
-                <li><p>Projectledning</p></li>
-                <li><p>CE märkning</p></li>
-            </ul>
-        </div>
+        </nav>
+    </header>
 
-    <!-- ---Footer--- -->
-        <footer>
-            <ul class="Contacts">
-                <li><img src="img/contact/mail.svg" class="ContactIcon" alt="Mail"><a href="mailto:Max.Guclu@chasacademy.se">Max.Guclu@chasacademy.se</a></li>
-                <li><img src="img/contact/phone.svg" class="ContactIcon" alt="Phone"><a href="tel:0046707369036">0707369036</a></li>
-                <li><img src="img/contact/linkedin.svg" class="ContactIcon" alt="Linkedin"><a href="https://www.linkedin.com/in/max-guclu/">LinkedIn</a></li>
+<!--Main Content-->
+    <main class="Main">
+        <ul class="mainContent"></ul>
+    </main>
+    <div class="Content1">
+        <h4>Skills</h4>
+        <ul class="skills">
+            <li><p>Systemvetenskap</p></li>
+            <li><p>Verksamhetsledning</p></li>
+            <li><p>Affärsstrategi</p></li>
+            <li><p>Operativ verksamhet</p></li>
+            <li><p>Analyserande</p></li>
+        </ul>
+    </div>
+    <div class="Content2">
+            <h4>Systems</h4>
+            <ul class="systems">
+                <li><p>Enterprise Architect (EA)</p></li>
+                <li><p>SAP</p></li>
+                <li><p>IFS ERP</p></li>
+                <li><p>Microsoft Office</p></li>
+                <li><p>Arc Gis</p></li>
             </ul>
+    </div>
+    <div class="Content3">
+        <h4>Courses</h4>
+        <ul class="Courses">
+            <li><p>Integrerad Logistik Stöd (ILS)</p></li>
+            <li><p>Human factor Integration (HFI)</p></li>
+            <li><p>Offentlig Upphandling</p></li>
+            <li><p>Projectledning</p></li>
+            <li><p>CE märkning</p></li>
+        </ul>
+    </div>
+
+<!--Footer-->
+    <footer>
+        <div class="contactList">
+        <ul class="Contacts">
+            <li><img src="img/contact/mail.svg" class="ContactIcon" alt="Mail"><a href="mailto:Max.Guclu@chasacademy.se">Max.Guclu@chasacademy.se</a></li>
+            <li><img src="img/contact/phone.svg" class="ContactIcon" alt="Phone"><a href="tel:0046707369036">0707369036</a></li>
+            <li><img src="img/contact/linkedin.svg" class="ContactIcon" alt="Linkedin"><a href="https://www.linkedin.com/in/max-guclu/">LinkedIn</a></li>
+        </ul>
+        </div>
+        <div class="contactFlag">
             <ul class="Language">
                 <li>
                     <img src="img/flags/sweden.png" 
@@ -143,8 +171,12 @@
                     <p>Modersmål</p>
                 </li>
             </ul>
-        </footer>
+        </div>
+        <a class="downloadLink" href="/file/MGCV_22.pdf" download>Download CV as PDF</a>
+    </footer>
     </div>
-    <script type="module" src="app.js"></script>
+<script type="module" src="app.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>
